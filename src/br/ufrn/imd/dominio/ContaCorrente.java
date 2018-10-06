@@ -39,12 +39,19 @@ public class ContaCorrente implements Tributavel{
 		return saldo;
 	}
 
+	/**
+	 * @param agencia da conta
+	 * @param numero da conta
+	 */
 	public ContaCorrente(String agencia, String numero) {
 		this.agencia = agencia;
 		this.numero = numero;
 		this.saldo = 0;
 	}
 	
+	/**
+	 * @param valor de saque
+	 */
 	public void saca(double valor) {
 		if(valor > 0) {
 			if(valor <= this.saldo) {
@@ -58,6 +65,9 @@ public class ContaCorrente implements Tributavel{
 		}
 	}
 	
+	/**
+	 * @param Valor de depósito
+	 */
 	public void deposita(double valor) {
 		if(valor > 0) {
 			this.saldo += valor;
@@ -67,6 +77,11 @@ public class ContaCorrente implements Tributavel{
 		}
 	}
 	
+	/**
+	 * @param valor de transferência
+	 * @param Conta para transferência
+	 * @return Booleano
+	 */
 	public boolean transfere(double valor, ContaCorrente cc) {
 		if(valor > 0 && valor <= this.saldo) {
 			this.saca(valor);
@@ -76,6 +91,9 @@ public class ContaCorrente implements Tributavel{
 		return false;
 	}
 	
+	/**
+	 * @return tributos em relação a con corrente
+	 */
 	public double calculaTributos() {
 		return saldo * 0.055;
 	}

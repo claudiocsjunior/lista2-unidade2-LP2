@@ -76,6 +76,9 @@ public class SeguroVida implements Tributavel{
 		this.taxa = taxa;
 	}
 	
+	/**
+	 * @return calculo do tributo em relação ao seguro de vida
+	 */
 	public double calculaTributos() {
 		return this.taxa;
 	}

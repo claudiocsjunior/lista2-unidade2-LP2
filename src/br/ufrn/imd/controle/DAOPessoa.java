@@ -16,9 +16,13 @@ public class DAOPessoa {
 		pessoas = new ArrayList<Pessoa>();
 	}
 	
+	/**
+	 * @param pessoa para efetuar o cadastro
+	 */
 	public void cadastrarPessoa(Pessoa pessoa) {
 		this.pessoas.add(pessoa);
 	}
+	
 	
 	public void listarPessoa() {
 		for(Pessoa pessoa : this.pessoas) {
